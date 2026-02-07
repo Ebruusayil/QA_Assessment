@@ -1,0 +1,12 @@
+C:\Users\ebrus\Desktop\QA_assesment\src\main\java\base\BaseTest.java
+C:\Users\ebrus\Desktop\QA_assesment\src\main\java\base\DriverFactory.java
+C:\Users\ebrus\Desktop\QA_assesment\src\main\java\pages\CartPage.java
+C:\Users\ebrus\Desktop\QA_assesment\src\main\java\pages\CategoryPage.java
+C:\Users\ebrus\Desktop\QA_assesment\src\main\java\pages\CheckoutPage.java
+C:\Users\ebrus\Desktop\QA_assesment\src\main\java\pages\HomePage.java
+C:\Users\ebrus\Desktop\QA_assesment\src\main\java\pages\ProductPage.java
+C:\Users\ebrus\Desktop\QA_assesment\src\main\java\pages\SuccessPage.java
+C:\Users\ebrus\Desktop\QA_assesment\src\main\java\utils\Log.java
+C:\Users\ebrus\Desktop\QA_assesment\src\main\java\utils\Money.java
+C:\Users\ebrus\Desktop\QA_assesment\src\main\java\utils\TestData.java
+C:\Users\ebrus\Desktop\QA_assesment\src\main\java\utils\Waits.java
