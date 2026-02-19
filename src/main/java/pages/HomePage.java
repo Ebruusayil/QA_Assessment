@@ -20,10 +20,10 @@ public class HomePage {
     }
 
     private By menMenu =
-            By.xpath("//nav[contains(@class,'navigation')]//li[a[normalize-space()='Men']]/a");
+            By.xpath("//nav[contains(@class,'navigation')]//li[a[normalize-space()='Men']]");
 
     private By topsMenu =
-            By.xpath("//nav[contains(@class,'navigation')]//li[a[normalize-space()='Men']]//a[normalize-space()='Tops']");
+            By.xpath("//nav[contains(@class,'navigation')]//li[a[normalize-space()='Men']]//li[a[normalize-space()='Tops']]");
 
     private By jacketsMenu =
             By.xpath("//nav[contains(@class,'navigation')]//li[a[normalize-space()='Men']]//a[normalize-space()='Jackets']");
@@ -38,7 +38,9 @@ public class HomePage {
         Actions actions = new Actions(driver);
 
         actions.moveToElement(waits.visible(menMenu))
+                .pause(Duration.ofMillis(300))
                 .moveToElement(waits.visible(topsMenu))
+                .pause(Duration.ofMillis(300))
                 .perform();
 
         waits.jsClick(jacketsMenu);

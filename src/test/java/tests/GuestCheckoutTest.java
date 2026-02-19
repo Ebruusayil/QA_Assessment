@@ -25,22 +25,14 @@ public class GuestCheckoutTest extends BaseTest {
         CategoryPage category = home.goToMenTopsJackets();
         Log.info("Navigated to Men > Tops > Jackets");
 
-        ProductPage product = category.openRandomProduct();
-        Log.info("Random product opened");
-
-        String productName = product.getProductName();
+        CartPage cart = category.addRandomProductToCartAndOpenCart();
+        String productName = category.getSelectedProductName();
 
         Assertions.assertFalse(
                 productName.isBlank(),
                 "Product name should not be blank");
 
-        Log.info("Product Name: " + productName);
-
-        product.addToCart();
-        Log.info("Product added");
-
-        CartPage cart = product.openCart();
-        Log.info("Cart page opened");
+        Log.info("Product added from listing: " + productName);
 
         Assertions.assertEquals(
                 productName,
