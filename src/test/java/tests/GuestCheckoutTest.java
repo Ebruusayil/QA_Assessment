@@ -22,8 +22,8 @@ public class GuestCheckoutTest extends BaseTest {
 
         home.waitForCloudflareToClear();
 
-        CategoryPage category = home.goToGearBags();
-        Log.info("Navigated to Gear > Bags");
+        CategoryPage category = home.goToMenTopsJackets();
+        Log.info("Navigated to Men > Tops > Jackets");
 
         ProductPage product = category.openRandomProduct();
         Log.info("Random product opened");
@@ -97,4 +97,3 @@ public class GuestCheckoutTest extends BaseTest {
         Log.info("Order No: " + orderNo);
     }
 }
-
