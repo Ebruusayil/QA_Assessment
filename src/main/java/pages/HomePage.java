@@ -20,13 +20,13 @@ public class HomePage {
     }
 
     private By menMenu =
-            By.cssSelector("#ui-id-5");
+            By.xpath("//nav[contains(@class,'navigation')]//li[a[normalize-space()='Men']]/a");
 
     private By topsMenu =
-            By.cssSelector("#ui-id-17");
+            By.xpath("//nav[contains(@class,'navigation')]//li[a[normalize-space()='Men']]//a[normalize-space()='Tops']");
 
     private By jacketsMenu =
-            By.cssSelector("#ui-id-19");
+            By.xpath("//nav[contains(@class,'navigation')]//li[a[normalize-space()='Men']]//a[normalize-space()='Jackets']");
 
     public HomePage open(String url) {
         driver.get(url);
@@ -41,7 +41,7 @@ public class HomePage {
                 .moveToElement(waits.visible(topsMenu))
                 .perform();
 
-        waits.click(jacketsMenu);
+        waits.jsClick(jacketsMenu);
 
         return new CategoryPage(driver);
     }
