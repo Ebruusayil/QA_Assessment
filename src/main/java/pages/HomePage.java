@@ -19,24 +19,31 @@ public class HomePage {
                 new Waits(driver, Duration.ofSeconds(20));
     }
 
-    private By gearMenu =
-            By.xpath("//*[@id=\"ui-id-21\"]/span[1]");
+    private By menMenu =
+            By.xpath("//nav[contains(@class,'navigation')]//li[a[normalize-space()='Men']]");
 
-    private By bagsMenu =
-            By.xpath("//*[@id=\"ui-id-22\"]/span");
+    private By topsMenu =
+            By.xpath("//nav[contains(@class,'navigation')]//li[a[normalize-space()='Men']]//li[a[normalize-space()='Tops']]");
+
+    private By jacketsMenu =
+            By.xpath("//nav[contains(@class,'navigation')]//li[a[normalize-space()='Men']]//a[normalize-space()='Jackets']");
 
     public HomePage open(String url) {
         driver.get(url);
         return this;
     }
 
-    public CategoryPage goToGearBags() {
+    public CategoryPage goToMenTopsJackets() {
 
-        new Actions(driver)
-                .moveToElement(waits.visible(gearMenu))
+        Actions actions = new Actions(driver);
+
+        actions.moveToElement(waits.visible(menMenu))
+                .pause(Duration.ofMillis(300))
+                .moveToElement(waits.visible(topsMenu))
+                .pause(Duration.ofMillis(300))
                 .perform();
 
-        waits.click(bagsMenu);
+        waits.jsClick(jacketsMenu);
 
         return new CategoryPage(driver);
     }
