@@ -19,24 +19,29 @@ public class HomePage {
                 new Waits(driver, Duration.ofSeconds(20));
     }
 
-    private By gearMenu =
-            By.xpath("//*[@id=\"ui-id-21\"]/span[1]");
+    private By menMenu =
+            By.cssSelector("#ui-id-5");
 
-    private By bagsMenu =
-            By.xpath("//*[@id=\"ui-id-22\"]/span");
+    private By topsMenu =
+            By.cssSelector("#ui-id-17");
+
+    private By jacketsMenu =
+            By.cssSelector("#ui-id-19");
 
     public HomePage open(String url) {
         driver.get(url);
         return this;
     }
 
-    public CategoryPage goToGearBags() {
+    public CategoryPage goToMenTopsJackets() {
 
-        new Actions(driver)
-                .moveToElement(waits.visible(gearMenu))
+        Actions actions = new Actions(driver);
+
+        actions.moveToElement(waits.visible(menMenu))
+                .moveToElement(waits.visible(topsMenu))
                 .perform();
 
-        waits.click(bagsMenu);
+        waits.click(jacketsMenu);
 
         return new CategoryPage(driver);
     }
