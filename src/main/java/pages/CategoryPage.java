@@ -57,6 +57,8 @@ public class CategoryPage {
 
         goToTopsIfNoProducts();
 
+        goToTopsIfNoProducts();
+
         waits.visible(products);
 
         List<WebElement> list =
@@ -82,6 +84,24 @@ public class CategoryPage {
         waits.click(viewCart);
 
         return new CartPage(driver);
+    }
+
+    private void goToTopsIfNoProducts() {
+
+        if (driver.findElements(noProductsMessage).isEmpty()) {
+            return;
+        }
+
+        WebDriverWait shortWait =
+                new WebDriverWait(driver, Duration.ofSeconds(3));
+
+        boolean noProductsVisible =
+                shortWait.until(ExpectedConditions.visibilityOfElementLocated(noProductsMessage)).isDisplayed();
+
+        if (noProductsVisible) {
+            waits.click(topsBreadcrumb);
+            waits.visible(products);
+        }
     }
 
     private void goToTopsIfNoProducts() {
